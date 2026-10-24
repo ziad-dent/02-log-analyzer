@@ -1,0 +1,12 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: log-analyzer-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: log-analyzer-con
+        image: ziadelmelegy/log-analyzer:1.0
+      restartPolicy: Never
+  backoffLimit: 2
